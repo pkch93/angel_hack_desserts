@@ -9,6 +9,11 @@
             "UnauthRoleName": "desserts-react-20190601131048-unauthRole",
             "StackName": "desserts-react-20190601131048",
             "StackId": "arn:aws:cloudformation:ap-northeast-2:643666473115:stack/desserts-react-20190601131048/3db2ca80-8423-11e9-8aa5-0678051528e6"
+        },
+        "categories": {
+            "auth": {
+                "desserts0905ea54": {}
+            }
         }
     }
 }

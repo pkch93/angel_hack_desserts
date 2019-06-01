@@ -1,1 +1,8 @@
-{}
+{
+	"auth": {
+		"desserts0905ea54": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

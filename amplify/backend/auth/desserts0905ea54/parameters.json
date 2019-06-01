@@ -1,0 +1,68 @@
+{
+    "identityPoolName": "desserts0905ea54_identitypool_0905ea54",
+    "allowUnauthenticatedIdentities": false,
+    "lambdaLogPolicy": "desser_0905ea54_lambda_log_policy",
+    "openIdLambdaRoleName": "desser_0905ea54_openid_lambda_role",
+    "openIdRolePolicy": "desser_0905ea54_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "desser_0905ea54_openid_lambda_iam_policy",
+    "openIdLogPolicy": "desser_0905ea54_openid_lambda_log_policy",
+    "userPoolName": "desserts0905ea54_userpool_0905ea54",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "desser0905ea54_sns-role",
+    "roleExternalId": "desser0905ea54_role_external_id",
+    "policyName": "desser0905ea54-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "desser0905ea54_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "desser0905ea54_totp_lambda_role",
+    "mfaLambdaLogPolicy": "desser0905ea54_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "desser0905ea54_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "desser0905ea54_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "desser0905ea54_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "desser0905ea54_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "desser0905ea54_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "desserts0905ea54",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "default"
+}
