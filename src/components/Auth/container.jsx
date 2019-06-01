@@ -27,10 +27,7 @@ class Container extends Component {
         }
 
         return (
-            <Authenticator
-                hideDefault={true}>
-                <SignIn />
-                <SignUp />
+            <Authenticator>
             </Authenticator>
         );
     }

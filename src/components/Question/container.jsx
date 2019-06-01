@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { Question } from './presenter';
 
-import { API } from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
+
+const GetQuestion = `query GetQuestion($id: ID!) {
+    getQuestion(id: $id) {
+        contents
+        yes
+        no
+    }
+}
+`
 
 class Container extends Component {
     constructor(props) {
@@ -13,17 +22,9 @@ class Container extends Component {
     }
 
     async componentDidMount() {
-        const id = 1;
-        await API.get("questionAPI", `/questions`, {
-            body: {
-                id
-            }
-        })
-        .then( res => {
-            this.setState({ question: res.data.content })
-        })
-        .catch( err => console.log(err.response) );
-        console.log(this.state.question);
+        const id = 3;
+        const result = await API.graphql(graphqlOperation(GetQuestion, { id }));
+        this.setState({ question: result.data.getQuestion.contents })
     }
 
     render() {
