@@ -11,7 +11,7 @@
 }
 
 .graph-nav .title {
-    font-size: 16px;
+    font-size: 22px;
     z-index: 5;
 }
 
@@ -27,4 +27,24 @@
 .graph-nav .other {
     font-size: 18px;
     cursor: pointer;
+}
+
+.graph-legend h3{
+    text-align: center;
+}
+
+.graph-legend p {
+    float: right;
+}
+
+.text-pointer {
+    cursor: pointer;
+}
+
+.week {
+    color: skyblue;
+}
+
+.month {
+    color: #343a40;
 }

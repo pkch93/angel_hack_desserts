@@ -38,10 +38,17 @@ class Container extends Component {
     }
 
     render() {
+        const data = [
+            {name: "6/1", value: 5}, 
+            {name: "5/31", value: 2}, 
+            {name: "5/30", value: 3}, 
+            {name: "5/29", value: 5}, 
+            {name: "5/28", value: 4}];
         return (
             <div className="insite-box">
                 <Insite insite={this.state.insite}/>
                 <GraphNav username={this.state.username} />
+                <Graph data={data}/>
             </div>
         );
     }    
