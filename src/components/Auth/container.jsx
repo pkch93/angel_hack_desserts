@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import LoginForm from './presenter';
+import Question from '../Question'
 
 import Amplify, { I18n } from 'aws-amplify';
 import aws_exports from '../../aws-exports'
-import { Authenticator, SignIn, SignUp } from 'aws-amplify-react';
+import { Authenticator } from 'aws-amplify-react';
 Amplify.configure(aws_exports);
 I18n.setLanguage('ko')
 I18n.putVocabularies({
@@ -22,10 +23,6 @@ class Container extends Component {
     }
 
     render() {
-        const myTheme = {
-
-        }
-
         return (
             <Authenticator>
             </Authenticator>

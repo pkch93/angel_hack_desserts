@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Question } from './presenter';
+import { Question, Button, QuestionHeader } from './presenter';
 
 import { API, graphqlOperation } from 'aws-amplify';
 
@@ -22,14 +22,21 @@ class Container extends Component {
     }
 
     async componentDidMount() {
-        const id = 3;
+        const id = 1;
         const result = await API.graphql(graphqlOperation(GetQuestion, { id }));
         this.setState({ question: result.data.getQuestion.contents })
     }
 
     render() {
         return (
-            <Question question={this.state.question}/>
+            <div className="question-block">
+                <QuestionHeader />
+                <Question question={this.state.question}/>
+                <div className="btns">
+                    <Button btnType="no" btnContent="아니오" />
+                    <Button btnType="yes" btnContent="예" />
+                </div>
+            </div>
         );
     }
 }
