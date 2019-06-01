@@ -1,18 +1,18 @@
 {
-    "react": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "desserts-react-20190601131048-authRole",
-            "UnauthRoleArn": "arn:aws:iam::643666473115:role/desserts-react-20190601131048-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::643666473115:role/desserts-react-20190601131048-authRole",
+            "AuthRoleName": "desserts-dev-20190601205824-authRole",
+            "UnauthRoleArn": "arn:aws:iam::643666473115:role/desserts-dev-20190601205824-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::643666473115:role/desserts-dev-20190601205824-authRole",
             "Region": "ap-northeast-2",
-            "DeploymentBucketName": "desserts-react-20190601131048-deployment",
-            "UnauthRoleName": "desserts-react-20190601131048-unauthRole",
-            "StackName": "desserts-react-20190601131048",
-            "StackId": "arn:aws:cloudformation:ap-northeast-2:643666473115:stack/desserts-react-20190601131048/3db2ca80-8423-11e9-8aa5-0678051528e6"
+            "DeploymentBucketName": "desserts-dev-20190601205824-deployment",
+            "UnauthRoleName": "desserts-dev-20190601205824-unauthRole",
+            "StackName": "desserts-dev-20190601205824",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:643666473115:stack/desserts-dev-20190601205824/908c7170-8464-11e9-a682-02e14c576202"
         },
         "categories": {
             "auth": {
-                "desserts0905ea54": {}
+                "dessertsaa74d5d9": {}
             }
         }
     }

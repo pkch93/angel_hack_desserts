@@ -16,7 +16,7 @@ class Container extends Component {
         const id = 1;
         await API.get("questionAPI", `/questions`, {
             body: {
-                id: 1
+                id
             }
         })
         .then( res => {

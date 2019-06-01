@@ -1,0 +1,6 @@
+type Question @model{
+  id: ID!
+  contents: String!
+  yes: Int!
+  no: Int!
+}

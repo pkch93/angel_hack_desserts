@@ -1,12 +1,12 @@
 {
-    "identityPoolName": "desserts0905ea54_identitypool_0905ea54",
+    "identityPoolName": "dessertsaa74d5d9_identitypool_aa74d5d9",
     "allowUnauthenticatedIdentities": false,
-    "lambdaLogPolicy": "desser_0905ea54_lambda_log_policy",
-    "openIdLambdaRoleName": "desser_0905ea54_openid_lambda_role",
-    "openIdRolePolicy": "desser_0905ea54_openid_pass_role_policy",
-    "openIdLambdaIAMPolicy": "desser_0905ea54_openid_lambda_iam_policy",
-    "openIdLogPolicy": "desser_0905ea54_openid_lambda_log_policy",
-    "userPoolName": "desserts0905ea54_userpool_0905ea54",
+    "lambdaLogPolicy": "desser_aa74d5d9_lambda_log_policy",
+    "openIdLambdaRoleName": "desser_aa74d5d9_openid_lambda_role",
+    "openIdRolePolicy": "desser_aa74d5d9_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "desser_aa74d5d9_openid_lambda_iam_policy",
+    "openIdLogPolicy": "desser_aa74d5d9_openid_lambda_log_policy",
+    "userPoolName": "dessertsaa74d5d9_userpool_aa74d5d9",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -14,9 +14,9 @@
     "mfaTypes": [
         "SMS Text Message"
     ],
-    "roleName": "desser0905ea54_sns-role",
-    "roleExternalId": "desser0905ea54_role_external_id",
-    "policyName": "desser0905ea54-sns-policy",
+    "roleName": "desseraa74d5d9_sns-role",
+    "roleExternalId": "desseraa74d5d9_role_external_id",
+    "policyName": "desseraa74d5d9-sns-policy",
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
@@ -27,7 +27,7 @@
     "requiredAttributes": [
         "email"
     ],
-    "userpoolClientName": "desser0905ea54_app_client",
+    "userpoolClientName": "desseraa74d5d9_app_client",
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
@@ -36,15 +36,15 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "mfaLambdaRole": "desser0905ea54_totp_lambda_role",
-    "mfaLambdaLogPolicy": "desser0905ea54_totp_lambda_log_policy",
-    "mfaPassRolePolicy": "desser0905ea54_totp_pass_role_policy",
-    "mfaLambdaIAMPolicy": "desser0905ea54_totp_lambda_iam_policy",
-    "userpoolClientLambdaRole": "desser0905ea54_userpoolclient_lambda_role",
-    "userpoolClientLogPolicy": "desser0905ea54_userpoolclient_lambda_log_policy",
-    "userpoolClientLambdaPolicy": "desser0905ea54_userpoolclient_lambda_iam_policy",
+    "mfaLambdaRole": "desseraa74d5d9_totp_lambda_role",
+    "mfaLambdaLogPolicy": "desseraa74d5d9_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "desseraa74d5d9_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "desseraa74d5d9_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "desseraa74d5d9_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "desseraa74d5d9_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "desseraa74d5d9_userpoolclient_lambda_iam_policy",
     "userpoolClientSetAttributes": false,
-    "resourceName": "desserts0905ea54",
+    "resourceName": "dessertsaa74d5d9",
     "authSelections": "identityPoolAndUserPool",
     "authRoleName": {
         "Ref": "AuthRoleName"
