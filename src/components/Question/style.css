@@ -21,6 +21,7 @@
 .question-nav .other-question {
     color: gray;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .question {

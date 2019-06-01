@@ -17,10 +17,12 @@ export const GraphNav = props => (
     </div>
 );
 
+
+
 export const Graph = props => (
     <div className="graph">
         <div className="graph-legend">
-            <h3> <span className="text-pointer">&lt;</span> 5월 3주차 <span className="text-pointer"> > </span></h3>
+            <h3><span className="text-pointer">&lt;</span> 5월 3주차 <span className="text-pointer"> > </span></h3>
             <p><span className="week text-pointer">주간</span> | <span className="month text-pointer">월간</span></p>
         </div>
         <ComposedChart  width={450} height={450} data={props.data}>

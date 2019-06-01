@@ -10,7 +10,7 @@ const LoginForm = (props) => (
                     id="username" 
                     type="text" 
                     name="username"
-                    onChange={props.change}
+                    onChange={props.onChange}
                  />
             </label>
             <label htmlFor="password">
@@ -19,10 +19,10 @@ const LoginForm = (props) => (
                     id="password"
                     type="password"
                     name="password"
-                    onChange={props.change}    
+                    onChange={props.onChange}    
                 />
             </label>
-            <button type="submit" onClick={props.submit}>로그인</button>
+            <button type="submit" onClick={props.login}>로그인</button>
         </form>
     </div>
 );

@@ -26,7 +26,10 @@ export const QuestionHeader = props => (
         <h2 className="date">
             {toLocaleString(new Date())}
         </h2>
-        <h3 className="other-question">
+        <h3 
+            className="other-question"
+            onClick={props.skip}
+        >
             다른 질문 대답하기 >
         </h3>
     </nav>  

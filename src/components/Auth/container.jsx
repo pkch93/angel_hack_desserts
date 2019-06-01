@@ -1,25 +1,43 @@
 import React, { Component } from 'react';
-import LoginForm from './presenter';
-import Question from '../Question'
 
-import Amplify, { I18n } from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from '../../aws-exports'
 import { Authenticator } from 'aws-amplify-react';
 Amplify.configure(aws_exports);
-I18n.setLanguage('ko')
-I18n.putVocabularies({
-    ko: {
-        'Sign In': '로그인',
-    }
-})
 
 class Container extends Component {
     constructor(props) {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            isLogin: false 
         }
+    }
+
+    componentDidMount() {
+        let isLogin = false;
+        Auth.currentSession()
+            .then(token => isLogin = token !== null)
+            .catch(err => console.log(err));
+        
+        this.setState({
+            isLogin
+        });
+    }
+
+    handleLogin = async (e) => {
+        e.preventDefault();
+        await Auth.signIn(this.state.username, this.state.password);
+        this.setState({
+            isLogin: true
+        })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
 
     render() {

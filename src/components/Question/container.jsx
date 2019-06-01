@@ -3,7 +3,6 @@ import { Question, Button, QuestionHeader } from './presenter';
 import Insite from '../Insite';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
-import { notEqual } from 'assert';
 
 const GetQuestion = `query GetQuestion($id: ID!) {
     getQuestion(id: $id) {
@@ -39,7 +38,7 @@ class Container extends Component {
         }
     }
 
-    getRandomNumber = () => Math.floor(Math.random() * 131) + 1;
+    getRandomNumber = () => Math.floor(Math.random() * 121) + 1;
 
     fetchQuestion = async () => {
         let id = this.getRandomNumber();
@@ -82,6 +81,10 @@ class Container extends Component {
         }
     }
 
+    jumpNextQuestion = () => {
+        this.fetchQuestion();
+    }
+
 
     render() {
         return (
@@ -89,7 +92,7 @@ class Container extends Component {
                 { this.state.cnt === 5 ? 
                     <Insite /> :
                     <div className="question-block">
-                        <QuestionHeader />
+                        <QuestionHeader skip={this.jumpNextQuestion} />
                         <Question question={this.state.question}/>
                         <div className="btns">
                             <Button 
