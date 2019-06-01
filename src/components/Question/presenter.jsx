@@ -8,7 +8,11 @@ export const Question = props => (
 );
 
 export const Button = props => (
-    <button className={`btn btn--${props.btnType}`}>
+    <button 
+        className={`btn btn--${props.btnType}`}
+        value={props.value}
+        onClick={props.onClick}
+    >
         {props.btnContent}
     </button>
 );

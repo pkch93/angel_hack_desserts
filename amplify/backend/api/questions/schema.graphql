@@ -4,3 +4,15 @@ type Question @model{
   yes: Int!
   no: Int!
 }
+
+type Score @model{
+  id: ID!
+  score: Int!
+  username: String!
+}
+
+type Insite @model{
+  id: ID!
+  category: Int!
+  contents: String!
+}
