@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Question, Button, QuestionHeader } from './presenter';
 import Insite from '../Insite';
 
-import { API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation, Auth } from 'aws-amplify';
+import { notEqual } from 'assert';
 
 const GetQuestion = `query GetQuestion($id: ID!) {
     getQuestion(id: $id) {
@@ -13,8 +14,18 @@ const GetQuestion = `query GetQuestion($id: ID!) {
 }
 `
 
-const PostScore = `
-
+const PostScore = `mutation NewScore($score: Int!, $username: String!, $create_date: String!) {
+    createScore(input: {
+        score: $score,
+        username: $username,
+        create_date: $create_date
+    }){
+        id
+        score
+        username
+        create_date
+    }
+}
 `
 
 class Container extends Component {
@@ -42,7 +53,6 @@ class Container extends Component {
             no: result.data.getQuestion.no,
             used: [...this.state.used, id]
         });
-        console.log(this.state.cnt)
     }
 
     componentDidMount() {
@@ -55,8 +65,18 @@ class Container extends Component {
             cnt: this.state.cnt + 1
         });
 
-        if (this.state.cnt === 5) {
-
+        if (this.state.cnt === 4) {
+            const now = new Date();
+            const scoreData = {
+                score: this.state.score,
+                username: "",
+                create_date: now.toISOString()
+            };
+            
+            Auth.currentSession()
+                .then(data => scoreData.username = data.getIdToken().payload['cognito:username'])
+                .catch(err => console.log(err));
+            API.graphql(graphqlOperation(PostScore, scoreData))
         } else {
             this.fetchQuestion();
         }

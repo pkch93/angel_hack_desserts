@@ -12,7 +12,7 @@ export const GraphNav = props => (
         <h3 className="title">
             {props.username}님의 감정 리포트
         </h3>
-        <h3>...</h3>
+        <h3 className="other">...</h3>
     </div>
 );
 

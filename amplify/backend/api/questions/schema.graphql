@@ -9,6 +9,7 @@ type Score @model{
   id: ID!
   score: Int!
   username: String!
+  create_date: String!
 }
 
 type Insite @model{
