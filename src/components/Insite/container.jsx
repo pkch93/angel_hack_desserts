@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Insite, GraphNav, Graph } from './presenter';
+import Calendar from '../Calendar';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 
@@ -59,6 +60,10 @@ class Container extends Component {
         })
     }
 
+    viewCalendar = (e) => {
+        
+    }
+
     render() {
         const { data } = this.state;
         const mappedData = data.map(score => {
@@ -83,6 +88,7 @@ class Container extends Component {
                 <Insite insite={this.state.insite}/>
                 <GraphNav username={this.state.username} />
                 <Graph data={mappedData}/>
+                <Calendar score={mappedData} />
             </div>
         );
     }    

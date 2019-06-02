@@ -19,7 +19,9 @@ export const GraphNav = props => (
         <h3 className="title">
             {props.username}님의 감정 리포트
         </h3>
-        <h3 className="other">...</h3>
+        <h3 
+            className="other"
+        >...</h3>
     </div>
 );
 
@@ -37,7 +39,6 @@ export const Graph = props => (
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
             <XAxis dataKey="name" tickMargin={10}/>
             <YAxis />
-            <Tooltip />
         </ComposedChart >
     </div>
 );
