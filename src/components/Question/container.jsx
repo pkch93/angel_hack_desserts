@@ -45,7 +45,9 @@ class Container extends Component {
         while (this.state.used.includes(id)) {
             id = this.getRandomNumber();
         }
+        console.log(id);
         const result = await API.graphql(graphqlOperation(GetQuestion, { id }));
+        console.log(result);
         this.setState({ 
             question: result.data.getQuestion.contents,
             yes: result.data.getQuestion.yes,
