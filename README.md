@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desserts
 
-## Available Scripts
+> Angelhack Seoul 2019 AWS Challenge Winner
 
-In the project directory, you can run:
+[Angelhack?](<https://event-us.kr/angelhackseoul/event/7465>)
 
-### `npm start`
+우울증 환자를 위한 감성 트랙킹 서비스 Desserts
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Members
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+|  이름  |   역할    |
+| :----: | :-------: |
+| 김예랑 | 기획 / PM |
+| 박경철 | 개발총괄  |
+| 김다롬 | back-end  |
+| 김민지 | front-end |
+| 김나혜 | 디자이너  |
 
-### `npm test`
+## Environment
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| front-end |  back-end   | database |
+| :-------: | :---------: | :------: |
+| react.js  | aws amplify | graphql  |
 
-### `npm run build`
+## Overview
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Feature
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. 간단한 질문을 통해 클라이언트의 현 감정 상태를 체크
+   - 질문의 대답은 O / X 형식
+   - O / X로 받은 응답을 수치화하여 현재 상태를 판단하기 좋게 정량화
+2. 질문을 완료하면 이전 기록들을 토대로 통계를 내서 오늘의 기분에 대한 문구를 보여줌
+3. 시각적으로 파악하기 편하게 그래프로 일간 / 월간, 캘린더로 월간 기분 상태를 체크
+4. 전체 기록을 리포트로 인쇄할 수 있도록 제공
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Mock Up
 
-### `npm run eject`
+![Desserts Application Mock Up](https://user-images.githubusercontent.com/30178507/58955195-385ed180-87d6-11e9-8830-2038467468d1.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## To-do
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> 우선순위 순
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. React Router 적용
+2. redux 적용하여 인증정보 관리
+3. 캘린더 구현
+4. 리포트 구현
+5. aws cognito의 HOC인 Authenticator 커스텀 (navigation bar 구현)
+6. 반응형 웹 적용
+7. PWA 적용
