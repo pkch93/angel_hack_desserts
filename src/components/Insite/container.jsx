@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Insite, GraphNav, Graph } from './presenter';
+import { Insite, Graph } from './presenter';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 
@@ -85,8 +85,7 @@ class Container extends Component {
         return (
             <div className="insite-box">
                 <Insite insite={this.state.insite}/>
-                <GraphNav username={this.state.username} />
-                <Graph data={mappedData}/>
+                <Graph username={this.state.username} data={mappedData}/>
             </div>
         );
     }    
