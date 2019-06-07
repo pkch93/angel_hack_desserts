@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from '../Auth';
 import Question from '../Question';
-import './style.css'
+import './style.scss'
 
 const App = () => {
   return (
