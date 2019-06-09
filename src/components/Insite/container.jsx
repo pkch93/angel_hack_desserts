@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import { Insite, Graph } from './presenter';
+import Calendar from 'components/Calendar';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 
@@ -59,10 +61,6 @@ class Container extends Component {
         })
     }
 
-    viewCalendar = (e) => {
-        
-    }
-
     render() {
         const { data } = this.state;
         const mappedData = data.map(score => {
@@ -86,6 +84,7 @@ class Container extends Component {
             <div className="insite-box">
                 <Insite insite={this.state.insite}/>
                 <Graph username={this.state.username} data={mappedData}/>
+                <Calendar date={data[0] === undefined ? undefined : new Date(data[0].create_date)} moodData={mappedData} />
             </div>
         );
     }    

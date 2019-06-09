@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComposedChart, Bar, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
-import Calendar from 'components/Calendar';
 import './style.scss'
 
 const coloredText = (text) => {
@@ -39,7 +38,7 @@ export const Graph = props => {
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="name" tickMargin={10} />
                 <YAxis />
-            </ComposedChart >
+            </ComposedChart>
         </div>
     )
 };
