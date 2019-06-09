@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import { Insite, Graph } from './presenter';
-import Calendar from 'components/Calendar';
+import { Insite } from './presenter';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 
@@ -31,7 +30,7 @@ class Container extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            insite: "",
+            sentence: "",
             username: "",
             score: "",
             data: []
@@ -42,7 +41,7 @@ class Container extends Component {
         const newState = {}
         const result = await API.graphql(graphqlOperation(ListInsites));
         const categoriedInsite = result.data.listInsites.items.filter(item => item.category === 8);
-        newState.insite = categoriedInsite[Math.floor(Math.random() * categoriedInsite.length)];
+        newState.sentence = categoriedInsite[Math.floor(Math.random() * categoriedInsite.length)];
         
         await Auth.currentSession()
         .then(data => newState.username = data.getIdToken().payload['cognito:username'])
@@ -55,7 +54,7 @@ class Container extends Component {
         })
         
         this.setState({
-            insite: newState.insite.contents,
+            sentence: newState.sentence.contents,
             username: newState.username,
             data: filteredScores
         })
@@ -63,14 +62,14 @@ class Container extends Component {
 
     render() {
         const { data } = this.state;
-        const mappedData = data.map(score => {
+        const processedData = data.map(score => {
             const date = new Date(score.create_date)
             return {
                 name: (date.getMonth() + 1) + "/" + date.getDate(),
                 value: score.score 
             }
         })
-        mappedData.sort((a, b) => {
+        processedData.sort((a, b) => {
             const temp1 = a.name.split('/').map(i => parseInt(i));
             const temp2 = b.name.split('/').map(i => parseInt(i));
             if (temp1[0] < temp2[0]) {
@@ -81,11 +80,12 @@ class Container extends Component {
             return 1;
         });
         return (
-            <div className="insite-box">
-                <Insite insite={this.state.insite}/>
-                <Graph username={this.state.username} data={mappedData}/>
-                <Calendar date={data[0] === undefined ? undefined : new Date(data[0].create_date)} moodData={mappedData} />
-            </div>
+            <Insite 
+                username={this.state.username}
+                sentence={this.state.sentence}
+                date={data[0] === undefined ? undefined : new Date(data[0].create_date)}
+                moodData={processedData}
+            />
         );
     }    
 }
