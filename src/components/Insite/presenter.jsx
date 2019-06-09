@@ -1,7 +1,8 @@
 import React from 'react';
-import './style.scss'
 import { ComposedChart, Bar, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
+import Calendar from 'components/Calendar';
+import './style.scss'
 
 const coloredText = (text) => {
     const splitedText = text.split('\n');
@@ -23,27 +24,22 @@ const GraphNav = props => (
     </div>
 );
 
-export const Graph = props => (
-    <div className="graph">
-        <GraphNav username={props.username}/>
-        <div className="graph-header">
-            <h3><span className="text-pointer">&lt;</span> 4월 ~ 5월 <span className="text-pointer"> > </span></h3>
-            <p><span className="week text-pointer">주간</span> | <span className="month text-pointer">월간</span></p>
+export const Graph = props => {
+    const { data } = props;
+    return (
+        <div className="graph">
+            <GraphNav username={props.username}/>
+            <div className="graph-header">
+                <h3><span className="text-pointer">&lt;</span> 4월 ~ 5월 <span className="text-pointer"> > </span></h3>
+                <p><span className="week text-pointer">주간</span> | <span className="month text-pointer">월간</span></p>
+            </div>
+            <ComposedChart width={320} height={500} data={data}>
+                <Bar barSize={20} dataKey="value" fill="#ffdeeb" />
+                <Line type="linear" dataKey="value" stroke="#343a40" />
+                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                <XAxis dataKey="name" tickMargin={10} />
+                <YAxis />
+            </ComposedChart >
         </div>
-        <ComposedChart width={500} height={500} data={props.data}>
-            <Bar barSize={20} dataKey="value" fill="#ffdeeb" />
-            <Line type="linear" dataKey="value" stroke="#343a40" />
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="name" tickMargin={10} />
-            <YAxis />
-        </ComposedChart >
-    </div>
-);
-
-const BASE_DATE = 6; // SATURDAY
-
-export const Calender = props => (
-    <div className="calendar">
-        
-    </div>
-);
+    )
+};

@@ -33,7 +33,7 @@ class Container extends Component {
         this.state = {
             question: "",
             score: 0,
-            cnt: 0,
+            cnt: 5,
             used: []
         }
     }
