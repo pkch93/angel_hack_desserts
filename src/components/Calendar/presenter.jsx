@@ -63,8 +63,8 @@ const makeCalendar = ({ date, moodData }) => {
 };
 
 // 캘린더 상단의 날짜 이름
-const CalendarHeader = () => {
-    const headers = DAY_NAMES.map((day, idx) => (
+const CalendarDayNames = () => {
+    const names = DAY_NAMES.map((day, idx) => (
         <li
             key={idx}
             className="date date--name">
@@ -72,17 +72,32 @@ const CalendarHeader = () => {
         </li>
     ));
     return (
-        <ul className="calendar__header">
-            {headers}
+        <ul className="calendar__names">
+            {names}
         </ul>
     );
 };
+
+const CalendarHeader = () => (
+    <div className="calendar__header">
+        <div className="palette">
+            <span className="palette palette--emoji" aria-label="bad" role="img">😥</span>
+            <span className="palette palette--blue"></span>
+            <span className="palette palette--green"></span>
+            <span className="palette palette--yellow"></span>
+            <span className="palette palette--red"></span>
+            <span className="palette palette--emoji" aria-label="good" role="img">😊</span>
+        </div>
+        <h3 className="title">감정 캘린더</h3>
+    </div>
+);
 
 // target은 년도와 월 정보가 있어야한다. moodData는 해당 월에 대해 날짜와 score 정보가 필요
 const Calendar = ({ date, moodData }) => {
     return (
         <div className="calendar">
             <CalendarHeader />
+            <CalendarDayNames />
             {date === undefined ? "로딩중" : makeCalendar({ date, moodData })}
         </div>
     );

@@ -1,19 +1,50 @@
 .calendar {
     width: 320px;
+    margin-top: 20px;
 
     .date {
         text-align: center;
         width: 44px;
         margin: 3px 0;
-        font-weight: bold;
     }
 
     .date--name {
         font-size: 18px;
         color: #a9a9a9;
+        font-weight: bold;
     }
 
     .calendar__header {
+        display: flex;
+        justify-content: space-between;
+
+        .palette {
+            display: flex;
+            padding: 3px 6px;
+
+            .palette--emoji {
+                margin: 0 2px;
+            }
+
+            .palette--blue {
+                background-color: #A8DEFF;
+            }
+
+            .palette--green {
+                background-color: #B1FF84;
+            }
+
+            .palette--yellow {
+                background-color: #FCDD6C;
+            }
+
+            .palette--red {
+                background-color: #FCBFBF;
+            }
+        }
+    }
+
+    .calendar__names {
         display: flex;
         justify-content: center;
         padding-bottom: 10px;
@@ -23,7 +54,7 @@
     .calendar__body {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 10px;
+        margin: 10px 5px;
 
         .date {
             width: 40px;
