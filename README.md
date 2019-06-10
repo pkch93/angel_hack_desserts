@@ -42,9 +42,12 @@
 > 우선순위 순
 
 1. React Router 적용
-2. redux 적용하여 인증정보 관리
-3. 캘린더 구현
+2. ~~redux 적용하여 인증정보 관리~~
+    > redux 적용은 추후에,,
+    >
+    > 인증정보는 cognito 커스텀 후 localstorage 사용 예정
+3. ~~캘린더 구현~~ (완료)
 4. 리포트 구현
 5. aws cognito의 HOC인 Authenticator 커스텀 (navigation bar 구현)
-6. 반응형 웹 적용
+6. ~~반응형 웹 적용~~ (완료)
 7. PWA 적용
