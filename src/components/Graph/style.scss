@@ -1,0 +1,25 @@
+.graph {
+    width: 320px;
+
+    .graph__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .week {
+        color: skyblue;
+    }
+    
+    .month {
+        color: #343a40;
+    }
+}
+
+.text-pointer {
+    cursor: pointer;
+}
+
+.colored {
+    color: #ffdeeb;
+}
