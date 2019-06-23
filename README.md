@@ -11,16 +11,16 @@
 |  이름  |   역할    |
 | :----: | :-------: |
 | 김예랑 | 기획 / PM |
-| 박경철 | 개발총괄  |
+| 박경철 | front-end / back-end |
 | 김다롬 | back-end  |
 | 김민지 | front-end |
 | 김나혜 | 디자이너  |
 
 ## Environment
 
-| front-end |  back-end   | database |
+| front-end |  back-end   | query language |
 | :-------: | :---------: | :------: |
-| react.js  | aws amplify | graphql  |
+| react.js  | aws amplify | graphql |
 
 ## Overview
 
@@ -39,15 +39,18 @@
 
 ## To-do
 
-> 우선순위 순
+1. redux 적용
+    - calendar 및 graph에 필요한 정보에 redux와 redux-saga 적용
 
-1. React Router 적용
-2. ~~redux 적용하여 인증정보 관리~~
-    > redux 적용은 추후에,,
-    >
-    > 인증정보는 cognito 커스텀 후 localstorage 사용 예정
-3. ~~캘린더 구현~~ (완료)
-4. 리포트 구현
-5. aws cognito의 HOC인 Authenticator 커스텀 (navigation bar 구현)
-6. ~~반응형 웹 적용~~ (완료)
-7. PWA 적용
+2. 그래프 주간 / 월간 기능 구현
+
+3. 캘린더 월별 조회 기능 구현
+    - 데이터가 없는 경우 볼 수 없도록 예외처리 필요
+    - 현재 날짜 이후의 월로 넘어가지 못하도록 예외처리 필요
+
+4. 리포트 출력 기능 구현
+    - 어떤 내용이 들어가야하는지 정리
+
+5. PWA 적용
+
+6. AWS amplify에서 Spring boot 프로젝트로 이전
