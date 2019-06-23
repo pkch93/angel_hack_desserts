@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Question, Button, QuestionHeader } from './presenter';
-import Insite from '../Insite';
+import { Question } from './presenter';
+import { Redirect } from 'react-router-dom';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 
@@ -40,23 +40,27 @@ class Container extends Component {
 
     getRandomNumber = () => Math.floor(Math.random() * 121) + 1;
 
-    fetchQuestion = async () => {
+    getNoneUsedNumber = () => {
         let id = this.getRandomNumber();
         while (this.state.used.includes(id)) {
             id = this.getRandomNumber();
         }
-        console.log(id);
+        return id;
+    };
+
+    fetchQuestion = async () => {
+        const id = this.getNoneUsedNumber();
         const result = await API.graphql(graphqlOperation(GetQuestion, { id }));
-        console.log(result);
+        
         this.setState({ 
             question: result.data.getQuestion.contents,
             yes: result.data.getQuestion.yes,
             no: result.data.getQuestion.no,
             used: [...this.state.used, id]
         });
-    }
+    };
 
-    componentDidMount() {
+    async componentDidMount() {
         this.fetchQuestion();
     }
 
@@ -73,7 +77,8 @@ class Container extends Component {
                 username: "",
                 create_date: now.toISOString()
             };
-            
+
+            // TODO: 추후 로그인 인증이 끝나면 localStorage에 인증 정보 저장
             Auth.currentSession()
                 .then(data => scoreData.username = data.getIdToken().payload['cognito:username'])
                 .catch(err => console.log(err));
@@ -83,34 +88,18 @@ class Container extends Component {
         }
     }
 
-    jumpNextQuestion = () => {
-        this.fetchQuestion();
-    }
-
-
     render() {
         return (
             <>
                 { this.state.cnt === 5 ? 
-                    <Insite /> :
-                    <div className="question-block">
-                        <QuestionHeader skip={this.jumpNextQuestion} />
-                        <Question question={this.state.question}/>
-                        <div className="btns">
-                            <Button 
-                                btnType="no"
-                                btnContent="아니오"
-                                value={this.state.no}
-                                onClick={this.handleBtnClick}
-                            />
-                            <Button 
-                                btnType="yes"
-                                btnContent="예"
-                                value={this.state.yes}
-                                onClick={this.handleBtnClick}
-                            />
-                        </div>
-                    </div>
+                    <Redirect to="/insite" /> :
+                    <Question 
+                        handleSkip={this.fetchQuestion}
+                        handleBtnClick={this.handleBtnClick}
+                        question={this.state.question}
+                        yes={this.state.yes}
+                        no={this.state.no}
+                    />
                 }
             </>
         );

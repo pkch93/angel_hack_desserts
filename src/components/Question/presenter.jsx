@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.scss'
 
-export const Question = props => (
+const Question = props => (
     <h3 className="question">
         {props.question}
     </h3>
 );
 
-export const Button = props => (
+const Button = props => (
     <button 
         className={`btn btn--${props.btnType}`}
         value={props.value}
@@ -21,7 +21,7 @@ const toLocaleString = (date) => {
     return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
 }
 
-export const QuestionHeader = props => (
+const QuestionHeader = props => (
     <nav className="question-nav">
         <h2 className="date">
             {toLocaleString(new Date())}
@@ -33,4 +33,25 @@ export const QuestionHeader = props => (
             다른 질문 대답하기 >
         </h3>
     </nav>  
+);
+
+export default ({ handleSkip, handleBtnClick, question, yes, no }) => (
+    <div className="question-block">
+        <QuestionHeader skip={handleSkip} />
+        <Question question={question}/>
+        <div className="btns">
+            <Button 
+                btnType="no"
+                btnContent="아니오"
+                value={no}
+                onClick={handleBtnClick}
+            />
+            <Button 
+                btnType="yes"
+                btnContent="예"
+                value={yes}
+                onClick={handleBtnClick}
+            />
+        </div>
+    </div>
 );
