@@ -24,6 +24,27 @@
 
 ## Overview
 
+1. 우울증 환자는 무드 트래킹을 해야 한다.
+
+    > 무드 트래킹?
+    >
+    > 감정 변화의 패턴을 파악하기 위해 간격을 두고 기분을 기록하는 심리학적 테크닉
+
+2. 우울증 환자들은 무드 트래킹을 어려워 한다.
+
+    - Dysfunction in Frontal Lobes > Self-Care 어려워 함
+        * decision
+        * making
+        * judgement
+        * recall
+        * self-monitoring
+        * willpower
+    - 하루를 되돌아보는 일 자체가 스트레스
+    - 몇 점을 줘야할지 정하지 못함
+    - 매일 어딘가에 기록할 의지가 부족함
+
+위 같은 이유로 우울증 환자들의 부담감과 귀찮음을 덜어주는 무드 트래킹 서비스를 기획
+
 ## Feature
 
 1. 간단한 질문을 통해 클라이언트의 현 감정 상태를 체크
@@ -39,8 +60,9 @@
 
 ## To-do
 
-1. redux 적용
+1. ~~redux 적용~~
     - calendar 및 graph에 필요한 정보에 redux와 redux-saga 적용
+    > 현재 redux의 필요성을 느끼지 못함
 
 2. 그래프 주간 / 월간 기능 구현
 
