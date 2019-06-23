@@ -48,6 +48,7 @@ class Container extends Component {
         return id;
     };
 
+    // TODO: 현재 한번씩 5번의 요청 서버에 전달하는데 이를 한번 요청으로 5개의 질문을 가져오도록 변경
     fetchQuestion = async () => {
         const id = this.getNoneUsedNumber();
         const result = await API.graphql(graphqlOperation(GetQuestion, { id }));

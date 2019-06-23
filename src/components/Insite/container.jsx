@@ -47,17 +47,18 @@ class Container extends Component {
         .then(data => newState.username = data.getIdToken().payload['cognito:username'])
         .catch(err => console.log(err));
         
+        // TODO: SSR 서버에서 해당 유저와 날짜를 전달받아서 로직 처리
         const basicDate = new Date(2018, 4);
         const scores = await API.graphql(graphqlOperation(ListScores));
         const filteredScores = scores.data.listScores.items.filter(score => {
             return (basicDate.getMonth() -1 <= new Date(score.create_date).getMonth() && new Date(score.create_date).getMonth() <= basicDate.getMonth());
-        })
+        });
         
         this.setState({
             sentence: newState.sentence.contents,
             username: newState.username,
             data: filteredScores
-        })
+        });
     }
 
     render() {
@@ -68,7 +69,8 @@ class Container extends Component {
                 name: (date.getMonth() + 1) + "/" + date.getDate(),
                 value: score.score 
             }
-        })
+        });
+
         processedData.sort((a, b) => {
             const temp1 = a.name.split('/').map(i => parseInt(i));
             const temp2 = b.name.split('/').map(i => parseInt(i));
@@ -79,6 +81,7 @@ class Container extends Component {
             }
             return 1;
         });
+
         return (
             <Insite 
                 username={this.state.username}
