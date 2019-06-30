@@ -19,12 +19,18 @@ const Sentence = ({ sentence }) => (
     </div>
 );
 
-const InsiteNav = ({ username }) => (
+const InsiteNav = ({ username, insitemenu, onClickInsiteNav, onClickToggleComponent }) => (
     <div className="insite-nav">
         <h3 className="title">
             {username}님의 감정 리포트
         </h3>
-        <h3 className="other">...</h3>
+        <h3 className="other">
+            <span onClick={onClickInsiteNav}>...</span>
+            <div className={`insite-popup ${insitemenu ? "" : "invisible"}`}>
+                <span onClick={onClickToggleComponent}>다르게 보기</span>
+                <a href="/report" target="_blank">리포트 추출</a>
+            </div>
+        </h3>
     </div>
 );
 
@@ -35,10 +41,16 @@ const VisualComponents = ({ moodData, date, calendar, graph }) => (
     </>
 );
 
-export const Insite = ({ username, sentence, moodData, date, calendar, graph }) => (
+export const Insite = ({ username, sentence, moodData, date, calendar, graph, insitemenu,
+    onClickInsiteNav, onClickToggleComponent }) => (
     <div className="insite-box">
         <Sentence sentence={sentence} />
-        <InsiteNav username={username} />
+        <InsiteNav
+            username={username}
+            insitemenu={insitemenu}
+            onClickInsiteNav={onClickInsiteNav} 
+            onClickToggleComponent={onClickToggleComponent}
+        />
         <div className="visual-components">
             <VisualComponents
                 moodData={moodData}

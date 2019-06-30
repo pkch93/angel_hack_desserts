@@ -45,4 +45,33 @@
         font-size: 18px;
         cursor: pointer;
     }
+
+    .insite-popup {
+        position: absolute;
+        font-size: 14px;
+        width: 100px;
+        right: 30px;
+        margin-top: 15px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+
+        &::after {
+            
+        }
+
+        span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .invisible {
+        display: none;
+    }
 }

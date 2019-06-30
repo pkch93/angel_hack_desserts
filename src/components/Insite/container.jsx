@@ -35,7 +35,8 @@ class Container extends Component {
             score: "",
             data: [],
             graph: true,
-            calendar: false
+            calendar: false,
+            insitemenu: false
         }
     }
 
@@ -62,6 +63,22 @@ class Container extends Component {
             data: filteredScores
         });
     }
+
+    handleInsiteNavMenuHover = (e) => {
+        e.stopPropagation();
+        this.setState({
+            ...this.state,
+            insitemenu: this.state.insitemenu ? false : true
+        })
+    };
+
+    handleInsiteNavMenuForComponents = () => {
+        this.setState({
+            ...this.state,
+            calendar: this.state.calendar ? false : true,
+            graph: this.state.graph ? false : true
+        })
+    };
 
     render() {
         const { data } = this.state;
@@ -92,9 +109,12 @@ class Container extends Component {
                 moodData={processedData}
                 graph={this.state.graph}
                 calendar={this.state.calendar}
+                insitemenu={this.state.insitemenu}
+                onClickInsiteNav={this.handleInsiteNavMenuHover}
+                onClickToggleComponent={this.handleInsiteNavMenuForComponents}
             />
         );
-    }    
+    }
 }
 
 export default Container;
