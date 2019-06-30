@@ -8,11 +8,11 @@ const Graph = ({ data, date }) => {
         <div className="graph">
             <div className="graph__header">
                 <h3>감정 그래프</h3>
-                <span className="date">
+                {/* <span className="date">
                     <span className="text-pointer left">&lt;</span>
                     ${date.getFullYear()}.${date.getMonth() + 1}
                     <span className="text-pointer right">&rt;</span>
-                </span>
+                </span> */}
                 <p><span className="week text-pointer">주간</span> | <span className="month text-pointer">월간</span></p>
             </div>
             <ComposedChart width={300} height={350} data={data}>
