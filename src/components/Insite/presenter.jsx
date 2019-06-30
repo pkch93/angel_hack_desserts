@@ -1,5 +1,4 @@
 import React from 'react';
-import { ComposedChart, Bar, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 import Calendar from 'components/Calendar';
 import Graph from 'components/Graph';
@@ -29,13 +28,24 @@ const InsiteNav = ({ username }) => (
     </div>
 );
 
-export const Insite = ({ username, sentence, moodData, date }) => (
+const VisualComponents = ({ moodData, date, calendar, graph }) => (
+    <>
+        <Graph data={moodData} graph={graph} />
+        <Calendar date={date} moodData={moodData} calendar={calendar} />
+    </>
+);
+
+export const Insite = ({ username, sentence, moodData, date, calendar, graph }) => (
     <div className="insite-box">
         <Sentence sentence={sentence} />
         <InsiteNav username={username} />
         <div className="visual-components">
-            <Graph data={moodData} />
-            <Calendar date={date} moodData={moodData}/>
+            <VisualComponents
+                moodData={moodData}
+                date={date}
+                calendar={calendar}
+                graph={graph}
+            />
         </div>
     </div>
 );

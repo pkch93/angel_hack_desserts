@@ -33,7 +33,9 @@ class Container extends Component {
             sentence: "",
             username: "",
             score: "",
-            data: []
+            data: [],
+            graph: true,
+            calendar: false
         }
     }
 
@@ -88,6 +90,8 @@ class Container extends Component {
                 sentence={this.state.sentence}
                 date={data[0] === undefined ? undefined : new Date(data[0].create_date)}
                 moodData={processedData}
+                graph={this.state.graph}
+                calendar={this.state.calendar}
             />
         );
     }    

@@ -93,9 +93,9 @@ const CalendarHeader = () => (
 );
 
 // target은 년도와 월 정보가 있어야한다. moodData는 해당 월에 대해 날짜와 score 정보가 필요
-const Calendar = ({ date, moodData }) => {
+const Calendar = ({ date, moodData, calendar }) => {
     return (
-        <div className="calendar">
+        <div className={`calendar ${calendar ? "" : "invisible"}`}>
             <CalendarHeader />
             <CalendarDayNames />
             {date === undefined ? "로딩중" : makeCalendar({ date, moodData })}

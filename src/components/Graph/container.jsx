@@ -16,7 +16,7 @@ class Container extends Component {
 
     render() {
         return (    
-            <Graph data={this.props.data}/>
+            <Graph data={this.props.data} graph={this.props.graph}/>
         );
     }
 }

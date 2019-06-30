@@ -3,9 +3,9 @@ import { ComposedChart, Bar, Line, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 import './style.scss';
 
-const Graph = ({ data, date }) => {
+const Graph = ({ data, date, graph }) => {
     return (
-        <div className="graph">
+        <div className={`graph ${graph ? "" : "invisible"}`}>
             <div className="graph__header">
                 <h3>감정 그래프</h3>
                 {/* <span className="date">
