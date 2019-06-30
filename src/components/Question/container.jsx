@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Question } from './presenter';
+import Question from './presenter';
 import { Redirect } from 'react-router-dom';
 
 import { API, graphqlOperation, Auth } from 'aws-amplify';
@@ -33,7 +33,7 @@ class Container extends Component {
         this.state = {
             question: "",
             score: 0,
-            cnt: 5,
+            cnt: 0,
             used: []
         }
     }

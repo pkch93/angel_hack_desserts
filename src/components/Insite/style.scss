@@ -57,7 +57,7 @@
         text-align: center;
         padding: 5px;
         opacity: 1;
-        transition: opacity 1s;
+        transition: opacity 0.5s;
 
         &::before {
             content: "";
@@ -80,7 +80,6 @@
     }
 
     .invisible {
-        display: none;
         opacity: 0;
     }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AmplifyCustomAuthTheme } from './presenter';
 
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from 'aws-exports'
@@ -42,7 +43,7 @@ class Container extends Component {
 
     render() {
         return (
-            <Authenticator>
+            <Authenticator theme={AmplifyCustomAuthTheme}>
             </Authenticator>
         );
     }

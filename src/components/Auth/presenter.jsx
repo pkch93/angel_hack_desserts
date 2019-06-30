@@ -1,7 +1,8 @@
 import React from 'react';
 import './style.scss';
+import { relative } from 'path';
 
-const LoginForm = (props) => (
+export const LoginForm = (props) => (
     <div className="login">
         <form action="" method="POST">
             <label htmlFor="username">
@@ -27,4 +28,14 @@ const LoginForm = (props) => (
     </div>
 );
 
-export default LoginForm;
+
+export const AmplifyCustomAuthTheme = {
+    container: {
+        position: 'absolute',
+        top: '25%',
+        left: '35%'
+    },
+    sectionHeader: {
+        fontSize: '20px'
+    }
+}
