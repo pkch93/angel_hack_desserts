@@ -2,6 +2,8 @@ import React from 'react';
 import { ComposedChart, Bar, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 import Calendar from 'components/Calendar';
+import Graph from 'components/Graph';
+
 import './style.scss'
 
 const coloredText = (text) => {
@@ -26,24 +28,6 @@ const InsiteNav = ({ username }) => (
         <h3 className="other">...</h3>
     </div>
 );
-
-const Graph = ({ data }) => {
-    return (
-        <div className="graph">
-            <div className="graph__header">
-                <h3>감정 그래프</h3>
-                <p><span className="week text-pointer">주간</span> | <span className="month text-pointer">월간</span></p>
-            </div>
-            <ComposedChart width={300} height={350} data={data}>
-                <Bar barSize={20} dataKey="value" fill="#ffdeeb" />
-                <Line type="linear" dataKey="value" stroke="#343a40" />
-                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="name" tickMargin={10} />
-                <YAxis />
-            </ComposedChart>
-        </div>
-    )
-};
 
 export const Insite = ({ username, sentence, moodData, date }) => (
     <div className="insite-box">

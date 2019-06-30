@@ -83,7 +83,7 @@ class Container extends Component {
         });
 
         return (
-            <Insite 
+            <Insite
                 username={this.state.username}
                 sentence={this.state.sentence}
                 date={data[0] === undefined ? undefined : new Date(data[0].create_date)}
